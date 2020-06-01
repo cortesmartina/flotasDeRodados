@@ -1,0 +1,23 @@
+import trafic.*
+import colores.*
+import otrosRodados.*
+import dependencias.*
+
+test "dependencia inventada" {
+
+	const cachito = new ChevroletCorsa()
+	cachito.color(rojo)
+	
+	const corsa2 = new ChevroletCorsa()
+	corsa2.color(azul)
+
+	trafic.configurar(interiorComodo, motorBataton)
+	
+	const invento = new Dependencia()
+	invento.agregarAFlota(cachito)
+	invento.agregarAFlota(corsa2)
+	invento.agregarAFlota(trafic)
+	
+	assert.equals(7800, invento.pesoTotalFlota())
+}
+
